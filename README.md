@@ -1,7 +1,7 @@
 # confirmationdialog
 to create a dialog in javascript (no jquery required)
 
-let dialog = new Dialog("your title","your sentence");
+let dialog = new Dialog("your title","your sentence","yes option","no option");
 
 you must then override the function "oui" and eventually "non" depending on what you want to do
 

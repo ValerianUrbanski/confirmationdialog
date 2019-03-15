@@ -4,19 +4,12 @@
 	<title>Confirmation</title>
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript" src="confirmation.js"></script>
+	<script type="text/javascript" src="example.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded',function(){
 			let conf = document.getElementById('conf');
 			conf.addEventListener('click',function(){
-				let dialog = new Dialog("Supprimer","Voulez-vous supprimer Agedis ?");
-				dialog.oui = function(){
-					console.log('oui');
-					dialog.close();
-				};
-				dialog.non = function(){
-					dialog.close();
-				};
-				dialog.show();
+				dialog();
 			});
 		});
 	</script>

@@ -1,13 +1,15 @@
 
 	class Dialog extends HTMLElement{
 
-		constructor(titre,action)
+		constructor(titre,action,option1,option2)
 		{
 			super();
 			this.titre = titre;
 			this.action = action;
 			this.oui = null;
 			this.non = null;
+			this.option1 = option1;
+			this.option2 = option2;
 			var shadow = this.attachShadow({ mode: 'open' });
             const style = document.createElement('style');
             style.textContent=
@@ -107,6 +109,8 @@
 			this.non = nonFunc;
 			this.show = showFunc;
 			this.close = hideFunc;
+			let opt1 = this.option1;
+			let opt2 = this.option2;
 			let background;
 			function createElement()
 			{
@@ -137,7 +141,7 @@
 					shadow.oui.call();
 					shadow.close.call();
 				});
-				buttonOui.innerHTML = "oui";
+				buttonOui.innerHTML = opt1;
 				let buttonNon = document.createElement('button');
 				buttonNon.id = "non";
 				buttonNon.classList.add('confirmation-btn');
@@ -145,7 +149,7 @@
 					shadow.non.call();
 					shadow.close.call();
 				});
-				buttonNon.innerHTML = "non";
+				buttonNon.innerHTML = opt2;
 				actions.appendChild(buttonNon);
 				actions.appendChild(buttonOui);
 

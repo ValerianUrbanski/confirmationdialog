@@ -14,3 +14,5 @@ dialog.non = function()
 }
 //don't forget this one
 dialog.show();
+#CSS customisation
+set --font-ubuntu : "your font" to change the font
